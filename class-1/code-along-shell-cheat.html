@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quick Start - Mapbox GL JS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <!-- Add a `link` tag for Mapbox GL JS's CSS -->
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- Add a `script` tag for Mapbox GL JS's JavaScript -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+  <!-- Set the map's width and height in a `style` tag -->
+  <style type="text/css">
+    #map {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a div to house the map -->
+  <div id="map"></div>
+  
+  <script>
+    // Set your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2swb2g4Z3hqMGFzYTNjbXdxc3F6dWZlaSJ9.Jo1SOIQUg0JV6HK4wEv36w';
+    
+    /* Create a variable called "map" and use it to store a new mapbox gl map.
+    * Set your map's center to [-122.467, 37.798] and zoom to 13. 
+    * Set the style URL to "mapbox://styles/mapbox/light-v10" 
+    * See the Mapbox GL JS API reference for more info: https://docs.mapbox.com/mapbox-gl-js/api/ 
+    */ 
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/light-v10', // style URL
+      center: [-122.467, 37.798], // starting position [lng, lat]
+      zoom: 13 // starting zoom
+    });
+
+    /* Create a variable called "popup" to store a new Popup instance (ref: https://docs.mapbox.com/mapbox-gl-js/api/#popup). 
+     * Give the Popup an offset of ____
+     * and set its HTML content to:
+     * "<b>The Presidio.</b><br /> Explore to find a drinking fountain!"
+     */
+    var popup = new mapboxgl.Popup()
+      .setHTML("<b>The Presidio.</b><br /> Explore to find a drinking fountain!");
+    
+    /* Create a variable called "marker," 
+     * add to it a new Marker (ref: https://docs.mapbox.com/mapbox-gl-js/api/#marker),
+     * set its Lng, Lat to [-122.4700, 37.8011],
+     * set its popup to the popup variable you created earlier,
+     * and add it to the map .
+     */
+    var marker = new mapboxgl.Marker()
+      .setLngLat([-122.4700, 37.8011])
+      .setPopup(popup)
+      .addTo(map);
+
+    // Store drinking fountain GeoJSON as a variable
+    var fountains = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4537919,37.7912456]},"id":"node/1769694045"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.46031,37.79055]},"id":"node/2351681814"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4752,37.807625]},"id":"node/2351681834"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4707394,37.8082485]},"id":"node/2351681836"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4830104,37.7924225]},"id":"node/3953107038"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4563351,37.8018044]},"id":"node/5241967573"}]};
+    // Store park boundaries as GeoJSON
+    var parkBounds = {"type":"FeatureCollection", "features": [{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-122.4853375,37.7904266],[-122.4858751,37.7908179],[-122.4842719,37.7928576],[-122.4832379,37.7949557],[-122.4819396,37.798327],[-122.480624,37.8004508],[-122.4787322,37.8051678],[-122.4783487,37.8079007],[-122.4778858,37.8083663],[-122.4777863,37.810963],[-122.476497,37.8108362],[-122.4760245,37.809593],[-122.4747671,37.8091646],[-122.4713947,37.8087832],[-122.4699743,37.8081491],[-122.4680096,37.8068615],[-122.4630302,37.8050755],[-122.4558165,37.8060442],[-122.4543421,37.8065008],[-122.4511046,37.8064196],[-122.4487534,37.8067265],[-122.4484657,37.8047567],[-122.4495362,37.8038926],[-122.4497386,37.8025531],[-122.4479338,37.8014334],[-122.4464893,37.7921443],[-122.4709873,37.7872621],[-122.4710167,37.7876685],[-122.4745325,37.7869786],[-122.4777506,37.7868624],[-122.4786058,37.7870322],[-122.48215,37.7870756],[-122.484081,37.7872954],[-122.4837596,37.7891148],[-122.4853375,37.7904266]]]},"properties":null,"id":"way/401354281"}]};
+    
+    /* Listen for the map's `load` event. Ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#on
+     * Once that event has been fired, you will add sources and
+     * layers inside the map's listener function 
+     */
+    map.on('load', function() { 
+      /* Add a park boundaries layer to your map for the parkBounds geojson. 
+       * `id` can be whatever you like!
+       * This layer should have `type` "fill",
+       * Inside `source`:
+         * `type` "geojson" and `data` should be set to your geojson from above.
+       * Inside `paint`: 
+         * `fill-color` should be "#088" and `fill-opacity` should be 0.7
+      */
+      map.addLayer({
+        "id": "park-boundaries",
+        "type": "fill",
+        "source": {
+          "type": "geojson",
+          "data": parkBounds
+        },
+        "paint": {
+          "fill-color": "#088",
+          "fill-outline-color": "#000",
+          "fill-opacity": 0.3
+        }
+      });
+
+      /* Add a drinking fountain layer to your map for drinking fountain GeoJSON. ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#addlayer
+       * `id` can be whatever you like!
+       * This layer should have `type` "symbol", 
+       * `source` should be `type` "geojson" and `data` should be set to your geojson from above.
+       * Inside `layout`: 
+         * `icon-image` should be "drinking-water-15" 
+       */
+       map.addLayer({
+        "id": "fountains",
+        "type": "symbol",
+        "source": {
+          "type": "geojson",
+          "data": fountains
+        },
+        "layout": {
+          "icon-image": "drinking-water-15"
+        }
+      });
+    });
+    
+  </script>
+</body>
+
+</html>
