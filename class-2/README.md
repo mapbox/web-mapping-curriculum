@@ -1,3 +1,3 @@
-Content for class 2. Class presentation materials are on [Google Drive here](https://drive.google.com/open?id=1ml4cobu5nnwX7jjK0cWJ6DfhRQfObIKmJdH2PK-UTWE).
+Content for class 2. Class presentation materials are on [Google Drive here](https://docs.google.com/presentation/d/1nNNup7iSOsG-xhoxhEWfkNDnwiH74qQ1BbSGji2ql_4/edit#slide=id.g643643ac23_0_34.
 
 
