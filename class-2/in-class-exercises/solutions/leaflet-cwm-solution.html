@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Add in the Leaflet CSS file -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <!-- Add Leaflet JavaScript file -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <!-- Add styling info for the map -->
+  <style type="text/css">
+    #mapId {
+      height: 600px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Our map will go here -->
+  <div id="mapId"></div>
+  <script>
+    var map = L.map("mapId").setView([37.754700, -122.420790], 14);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    /* L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
+      attribution: '<a id="home-link" target="_top" href="../">Map tiles</a> by <a target="_top" href="http://stamen.com">Stamen Design</a>, under <a target="_top" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a target="_top" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_top" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+    }).addTo(map); */
+  </script>
+</body>
+
+</html>
