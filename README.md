@@ -1,12 +1,13 @@
 # Web-Mapping-Curriculum
 
 Instructor: Dan Swick, dan@mapbox.com
-TA: Megan Danielson, megan.danielson@mapbox.com
-Office Hours: By appointment only 
+<br> TA: Megan Danielson, megan.danielson@mapbox.com
+<br>Office Hours: By appointment only 
 
 Class Meetings:	Thursdays, 6:30pm–9:30pm, 01/16 - 03/05
-Room/Bldg:  Harney G24
+<br>Room/Bldg:  Harney G24
 
+----
 
 ## Welcome to Introduction to Web Mapping with Mapbox!
 
@@ -22,8 +23,8 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 
 ### Software/Web Applications: 
 
-GitHub Account – for viewing and submitting course assignments.
-Visual Studio Code – for navigating and editing code documents.
-Chrome Developer tools – for debugging websites and network activity.
-Mapbox Account – for designing maps in Mapbox Studio, developing interactive web maps with Mapbox GL JS.
-PKZip or WINZIP or similar program – to compress multiple files and folders for emailing. 
+- GitHub Account – for viewing and submitting course assignments.
+- Visual Studio Code – for navigating and editing code documents.
+- Chrome Developer tools – for debugging websites and network activity.
+- Mapbox Account – for designing maps in Mapbox Studio, developing interactive web maps with Mapbox GL JS.
+- PKZip or WINZIP or similar program – to compress multiple files and folders for emailing. 
