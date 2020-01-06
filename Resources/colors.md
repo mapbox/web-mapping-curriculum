@@ -11,13 +11,15 @@ Remember that color plays a critical role in your map visualization and data ana
 
 [NASA-Ames Color Tool](https://colorusage.arc.nasa.gov/ColorTool.php)
 
-(Lch Color Gradient Picker)(http://jsfiddle.net/d6wXV/6/embedded/result/)
+[Lch Color Gradient Picker](http://jsfiddle.net/d6wXV/6/embedded/result/)
 
 [Data Color Picker](https://learnui.design/tools/data-color-picker.html)
 
 [Chroma.js Color Palette Helper](https://vis4.net/palettes/#/9|s|00429d,96ffea,ffffe0|ffffe0,ff005e,93003a|1|1)
 
 [Viz Palette](https://projects.susielu.com/viz-palette)
+
+[Cartogram](https://apps.mapbox.com/cartogram/)
 
 ----
 
