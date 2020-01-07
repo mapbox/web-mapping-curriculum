@@ -28,3 +28,20 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 - Chrome Developer tools – for debugging websites and network activity.
 - Mapbox Account – for designing maps in Mapbox Studio, developing interactive web maps with Mapbox GL JS.
 - PKZip or WINZIP or similar program – to compress multiple files and folders for emailing. 
+
+---
+
+### Class schedule 
+
+
+| Class 	| Topic                                        	| Lecture  	| Homework 	| Project Due Dates                            	|
+|-------	|----------------------------------------------	|----------	|----------	|----------------------------------------------	|
+| 1     	| Introduction                                 	| Add link 	| Add link 	|                                              	|
+| 2     	| History of web-mapping and working with data 	| Add link 	| Add link 	| Select project group, submit possible topics 	|
+| 3     	| Adding interactivity to your map             	| Add link 	| Add link 	| Project data and proposal                    	|
+| 4     	| Client-side rendering                        	| Add link 	| Add link 	|                                              	|
+| 5     	| Cartography for the web                      	| Add link 	| Add link 	|                                              	|
+| 6     	| Trouble shooting errors                      	| Add link 	| Add link 	|                                              	|
+| 7     	| Live map updates                             	| Add link 	| Add link 	|                                              	|
+| 8     	| Work day                                     	| Add link 	| Add link 	| Project presentations                        	|
+| 9     	|                                              	|          	|          	| Final submissions due                	|
