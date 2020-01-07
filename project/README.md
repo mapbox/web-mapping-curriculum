@@ -22,6 +22,8 @@ For the purposes of this class students will choose 1 of 3 topics - fracking, fi
 
 - [SF housing and homelessness data](https://drive.google.com/open?id=1ax5_IRVYhrxrUyo4FGJT7-e5p_1r5Cem)
 
+Additional data resources can be found [here](https://github.com/mapbox/web-mapping-curriculum/blob/master/Resources/data-sources.md)
+
 
 ### Techniques 
 
