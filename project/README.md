@@ -14,7 +14,7 @@ The final project will have 4 components:
 
 ### Project topics and data 
 
-For the purposes of this class students will choose 1 of 3 topics - fracking, fires, housing/homelessness - for the development of their web application. We have curated three collections for the class, however, students are not limited to the data that has been provided and a free to integrate additional datasets into their final design. 
+For the purposes of this class students will choose 1 of 3 topics - fracking, fires, housing/homelessness - for the development of their web application. Data collections have been curated for the class, however, are free to integrate additional datasets into their final design. 
 
 - [California fire data](https://drive.google.com/open?id=1-EJsze2SEx5g1CA2Fj1u6R9IT1xhq1hK)
 
