@@ -1,4 +1,4 @@
-Before class begins on 01/16 students should complete the following tasks: 
+Before class begins on 01/16, students should complete the following tasks: 
 
 - [ ] Sign up for a GitHub Account: https://github.com/ ; https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account
 - [ ] Sign up for a Mapbox Account: https://account.mapbox.com/auth/signup/
