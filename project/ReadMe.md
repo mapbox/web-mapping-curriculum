@@ -6,13 +6,8 @@ The final project will have 4 components:
 
 1. Project proposal (10 points) – 1-2 paragraphs outlining the project scope and purpose. 
 2. Data report (15 points) – a report on the data resources and data visualization techniques that will be employed. 
-3. Presentation (15 points) - Brief (no more than 5 minutes) presenation outlining: the plan and purpose of the project, the intended audience, a description of the data/resources, a description of the development of the application, and an overview of the issues encountered while completing the project. In addition, students should be prepared to give a live demo of their web application.
-4. Final web application and summary report (30 points) - The final web application should demonstrate the cartographic and web mapping principles covered in the class and should employ at least one of the data visualization techniques outined below. In addition to a web application, students are required to write a summary report that answers the following questions: 
-
-- Who is the audience for this application? 
-- What is the purpose of this map? What do you want the audience/users to get out of this data visualization? 
-- What design techniques did you employ? 
-- How did you prepare your data?  
+3. Presentation (15 points) - Brief (no more than 5 minutes) presenation outlining: the plan and purpose of the project, the intended audience, a description of the data resources and preparation, a description of the development of the application, and an overview of the issues encountered while completing the project. In addition, students should be prepared to give a live demo of their web application.
+4. Final web application and summary report (30 points) - The final web application should demonstrate the cartographic and web mapping principles covered in the class and should employ at least one of the data visualization techniques outined below. In addition to a web application, students are required to write a summary report outlining: the plan and purpose of the project, the intended audience, a description of the data resources and preparation, a description of the development of the application, and an overview of the issues encountered while completing the project.
 
 ### Project topics and data 
 
