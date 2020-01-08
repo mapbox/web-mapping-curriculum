@@ -8,5 +8,5 @@ __Mapbox resources:__ tutorials, how-to videos and links to documentation
 
 __Data:__ A list of primary and secondary data sources
 
-__Introduction to web development:___ Introductory resources for learning HTML, CSS and JavaScript
+__Introduction to web development:__ Introductory resources for learning HTML, CSS and JavaScript
 
