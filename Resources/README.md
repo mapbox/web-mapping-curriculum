@@ -1,6 +1,6 @@
 # Class Resources 
 
-Welcome to the course resources folder! Here we've provided a number of resources including tutorials, blog posts, research papers, and tools to help you learn more about web mapping and data visualization. 
+Welcome to the course resources folder! Here we've provided a number of resources including tutorials, blog posts, research papers, and tools to help you learn more about web mapping and data visualization. Check out any of the following folders:
 
 __Color:__ Choosing appropriate color schemes for your data visualization project
 
