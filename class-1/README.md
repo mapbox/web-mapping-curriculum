@@ -6,7 +6,7 @@ Class presentation materials are on [Google Drive here](https://drive.google.com
 ## Homework
 
 ### Writing prompts
-Note: submit writing prompts each week as a markdown file in your class repo. 
+Note: submit writing prompts each week as the `writing-prompts.md` markdown file in your class repo. 
 
 How the internet works
 1. Why is HTTP a thing?
