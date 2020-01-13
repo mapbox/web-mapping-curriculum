@@ -54,7 +54,8 @@ __Fracking and Groundwater in California__
   
   __SGMA aquifers:__
   Source: California Department of Water Resources
-  Description: https://www.emwd.org/sites/default/files/file-attachments/sgma_basin_prioritization_2019_results.pdf?1559164669
+  Description: https://www.emwd.org/sites/default/files/file-attachments/sgma_basin_prioritization_2019_results.pdf?1559164669 <br>
+  
   Access: https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization
   http://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fgis.water.ca.gov%2Farcgis%2Frest%2Fservices%2FGeoscientific%2Fi08_B118_SGMA_2019_Basin_Prioritization%2FFeatureServer%2F0&source=sd
 
@@ -75,7 +76,8 @@ __Housing and Homelessness in San Francisco__
   Access: https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6
   Additional processing: The data was parsed by year for ease of use &  subset for calls related to homeless encampment 
   
-  __Neighborhood housing price data:__ https://www.zillow.com/research/data/
+  __Neighborhood housing price data:__ https://www.zillow.com/research/data/ <br>
+  
   __Neighborhood geojson:__ https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4
   
   External resources & project motivation: https://projects.sfchronicle.com/sf-homeless/how-to-help/
