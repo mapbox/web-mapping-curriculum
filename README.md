@@ -27,7 +27,7 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 - [Visual Studio Code](https://code.visualstudio.com/) – for navigating and editing code documents.
 - [Chrome Developer tools](https://developers.google.com/web/tools/chrome-devtools) – for debugging websites and network activity.
 - [Mapbox Account](https://account.mapbox.com/auth/signup/) – for designing maps in Mapbox Studio, developing interactive  web maps with Mapbox GL JS.
-- [USFGsAL Slack Group](https://join.slack.com/t/usfca-gsal/shared_invite/enQtODg2NDE5ODIzNTM3LTVkZGNlZGMyMjZlMjVlMWYwYjM2ODRhODNkNDk3MWU4ZGI0M2MxNjliMmExOTljZDIyOThkM2M0MzY5MTk4Nzg) - for communicating with students and instructors about class assignments, projects, etc.
+- USFGsAL Slack Group (invitation provided in your welcome email) - for communicating with students and instructors about class assignments, projects, etc.
 - PKZip or WINZIP or similar program – to compress multiple files and folders for emailing. 
 
 ---
