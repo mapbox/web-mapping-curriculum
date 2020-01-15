@@ -3,6 +3,24 @@
 
 Class presentation materials are on [Google Drive here](https://drive.google.com/drive/u/0/folders/1954gWK2MWcNelov4CXq5y4jL0cG7EXFv).
 
+Class exercise links: 
+
+Deck of cards API: https://deckofcardsapi.com/
+
+Google Map static API example: 
+
+- https://developers.google.com/maps/documentation/maps-static/intro#quick_example
+
+- bit.ly/g-static
+
+Lyzi Diamond’s lecture: https://github.com/lyzidiamond/explains/blob/master/how-the-internet-works.md
+
+Floppy Bird: 
+
+- http://danswick.com/floppybird/
+
+- github.com/danswick/floppybird/blob/gh-pages/js/main.js
+
 ## Homework
 
 ### Writing prompts
