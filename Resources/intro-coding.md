@@ -1,6 +1,6 @@
 # Introduction HTML, CSS, and JavaScript
 
-If you've ever started taking web development courses then you have probably been introduced to an analogy or two that help to explain the structure of a website. A common analogy used to do this is by comparing a website to a house. Where: 
+If you've ever started taking web development courses then you have probably been introduced to an metaphor or two that help to explain the structure of a website. For example, by comparing a website to a house. Where: 
 
 HTML is like the structure or scaffolding of the building. An HTML file contains the structure of the page itself. 
 
