@@ -24,37 +24,29 @@ Floppy Bird:
 ## Homework
 
 ### Writing prompts
-Note: submit writing prompts each week as the `writing-prompts.md` markdown file in your class repo. 
+Note: submit writing prompts each week as the [writing-prompts.md](./writing-prompts.md) markdown file in your class repo. 
 
-How the internet works
+How GitHub works (2 pts each)
+1. Describe what we mean when we say that GitHub is both “Git” and “Hub”.
+2. Why might you want to fork a repository?
+
+How the internet works (2 pts each)
 1. Why is HTTP a thing?
-2. Why do APIs like the deck of cards thing exist?
-3. What kinds of requests do you make in your daily life?
+2. What is an API and why do APIs like the deck of cards thing exist?
+3. Write about two kinds of HTTP requests you make in your daily life.
+4. Why do some URLs have ?s and &s in them?
 
-How webpages work
+How webpages work (2 pts each)
 1. What's a good metaphor for HTML, CSS, and JavaScript?
 2. What would you use Chrome Dev Tools for?
 3. What is the JavaScript console?
 
-Vocab list (add to master list each class): 
+### Code exercises (5 pts each)
 
-### Code exercises
-
-1. Using the network inspector and Postman, make a standalone request for a single map tile.
-[GH proficiency] Commit your class journal to your class repo for week one. 
-2. Github proficiency (pull request, commits, etc) 
-3. Pre-populate class repos for everyone. Pre-activate github pages.
+1. Using the network inspector and Postman, make a standalone request for a single map tile. Open an issue in your forked repo describing how you formulated your tile request and include the final URL.
+2. Successfully commit your writing prompts to your forked repo.
 
 
 ## Project
 
 Formalize group members (pairs)
-
-
-## Additional learning materials
-
-
-
-
-
-
