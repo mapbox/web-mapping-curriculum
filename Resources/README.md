@@ -10,3 +10,4 @@ __Data:__ A list of primary and secondary data sources
 
 __Introduction to web development:__ Introductory resources for learning HTML, CSS and JavaScript
 
+__Markdown:__ Resources for working with markdown 
