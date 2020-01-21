@@ -46,3 +46,5 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 | 7     	| Live map updates                             	| Add link 	| Add link 	|                                              	|
 | 8     	| Work day                                     	| Add link 	| Add link 	| Project presentations                        	|
 | 9     	|                                              	|          	|          	| Final submissions due                	|
+
+My name is Si and I am making edits. 
