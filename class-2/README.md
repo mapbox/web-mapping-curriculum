@@ -12,11 +12,11 @@ Writing Prompts (2 pts each):
 4. What is Leaflet?
 5. How has web map rendering changed over the years?
 6. What is the basemap-overlay paradigm and how are GL maps different?
+7. Head to the [Mapbox GL JS examples page](https://docs.mapbox.com/mapbox-gl-js/examples/) and pick two examples under the user interactions section. What kind of interactions do you see? Why might you use each of those interactions?
 
 Exercises to do on your own (10 pts each):
 
 1. Keep learning! Try one more of the Web apps tutorials on the [Mapbox help page](https://docs.mapbox.com/help/tutorials/#web-apps) and submit your completed tutorial to your GitHub project.
-2. Head to the [Mapbox GL JS examples page](https://docs.mapbox.com/mapbox-gl-js/examples/) and pick two examples under the user interactions section. What kind of interactions do you see? Why might you use each of those interactions?
 3. If you didn’t finish the “code together” exercise, please do so before next week.
 
 
