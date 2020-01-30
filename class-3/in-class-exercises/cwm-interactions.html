@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Display a map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+
+    // Initialize the map
+    mapboxgl.accessToken = '<your access token here>';
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+      center: [-122.44, 37.76], // starting position [lng, lat]
+      zoom: 11 // starting zoom
+    });
+
+    // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/
+
+    // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol 
+
+    // Add a function that flies to a location: https://docs.mapbox.com/mapbox-gl-js/api/#map#flyto
+
+    // Add a function that sets pitch (tilt) to 60 and bearing (rotation) to 45: https://docs.mapbox.com/mapbox-gl-js/api/#map#setpitch and https://docs.mapbox.com/mapbox-gl-js/api/#map#setbearing
+
+    // Add a search box: https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/
+
+    // Add a geolocation button: https://docs.mapbox.com/mapbox-gl-js/api/#geolocatecontrol
+  </script>
+
+</body>
+
+</html>

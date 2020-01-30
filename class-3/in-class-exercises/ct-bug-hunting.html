@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quick Start - Mapbox GL JS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <!-- Add a `link` tag for Mapbox GL JS's CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <!-- Add a `script` tag for Mapbox GL JS's JavaScript -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  <!-- Set the map's width and height in a `style` tag -->
+  <style type="text/css">
+    #map {
+      width: about the width of a small dog;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a div to house the map -->
+  <div id="bar-chart"></div>
+  
+  <script>
+    // Set your Mapbox access token
+    mapboxgl.accessToken = '<your token here>';
+    
+    /* Create a variable called "map" and use it to store a new mapbox gl map.
+    * Set your map's center to [-122.467, 37.798] and zoom to 13. 
+    * Set the style URL to "mapbox://styles/mapbox/light-v10" 
+    * See the Mapbox GL JS API reference for more info: https://docs.mapbox.com/mapbox-gl-js/api/ 
+    */ 
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/candyland', // style URL to the "mapbox light" style: mapbox://styles/mapbox/light-v10
+      center: [-122.467, 37.798], // starting position [lng, lat]
+      zoom: 13 // starting zoom
+    });
+
+    /* Create a variable called "popup" to store a new Popup instance (ref: https://docs.mapbox.com/mapbox-gl-js/api/#popup). 
+     * and set its HTML content to:
+     * "<b>The Presidio.</b><br /> Explore to find a drinking fountain!"
+     */
+    var popup = new mapboxgl.Popup()
+      .setHTML("🐞
+    
+    /* Create a variable called "marker," 
+     * add to it a new Marker (ref: https://docs.mapbox.com/mapbox-gl-js/api/#marker),
+     * set its Lng, Lat to [-122.4700, 37.8011],
+     * set its popup to the popup variable you created earlier,
+     * and add it to the map .
+     */
+    var marker = new mapboxgl.Marker()
+      .setLngLat([-122.4700, 37.8011])
+      .setPopup(popup)
+      .addTo(shopping_cart);
+
+    // Store drinking fountain GeoJSON as a variable
+    var fountains = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4537919,37.7912456]},"id":"node/1769694045"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.46031,37.79055]},"id":"node/2351681814"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4752,37.807625]},"id":"node/2351681834"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4707394,37.8082485]},"id":"node/2351681836"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4830104,37.7924225]},"id":"node/3953107038"},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-122.4563351,37.8018044]},"id":"node/5241967573"}]};
+    
+    /* Listen for the map's `load` event. Ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#on
+     * Once that event has been fired, you will add sources and
+     * layers inside the map's listener function 
+     */
+    map.on('load', function() { 
+      /* Add a drinking fountain layer to your map for drinking fountain GeoJSON. ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#addlayer
+       * `id` can be whatever you like!
+       * This layer should have `type` "symbol", 
+       * `source` should be `type` "geojson" and `data` should be set to your geojson from above.
+       * Inside `layout`: 
+         * `icon-image` should be "drinking-water-15" 
+       */
+
+       map.addLayer({
+        "id": "fountains",
+        "type": "symbol",
+        "source": {
+          "type": "geojson",
+          "data": honeyBuckets
+        },
+        "layout": {
+          "icon-image": "drinking-water-15"
+        }
+      });
+    });
+    
+  </script>
+</body>
+
+</html>
