@@ -23,12 +23,12 @@ Class presentation materials are on [Google Drive here](https://drive.google.com
 
 ### Code exercises to do on your own (10 points):
 
-* Starting from your marker-and-popup map, add a button that, when clicked, causes the map to fly to Walla Walla, Washington.
+* Starting from your marker-and-popup map, add a button that, when clicked, causes the map to fly to Walla Walla, Washington. To turn this assignment in, commit a new file called "fly-to.html" to the "class 3" folder in your personal class repo.
   * [Hint](https://www.w3schools.com/jsref/event_onclick.asp)
-* Create popups that include information about the clicked feature. Starting from [this starter file](https://github.com/mapbox/web-mapping-curriculum/blob/master/class-3/homework-starter.html), attempt to address each of the `[Prompt]` comments, including any sub-prompts that follow. This will be a challenging exercise and we don't expect everyone to build a completely working map. For any prompts you get stuck on, you can still get full credit by including, at a minimum: 
+* Create popups that include information about the clicked feature. Starting from [this starter file](https://github.com/mapbox/web-mapping-curriculum/blob/master/class-3/homework-starter.html), attempt to address each of the `[Prompt]` comments, including any sub-prompts that follow. Once you have made your edits, save your changes and commit the file to your personal class repo. This will be a challenging exercise and we don't expect everyone to build a completely working map. For any prompts you get stuck on, you can still get full credit by including, at a minimum: 
   * Pseudo code describing what you think needs to happen.
   * At least one code snippet showing what you attempted.
-  * Links to any resources you found while researching. 
+  * Links to any resources you found while researching.
 
 ## Project
 By now you should have a project proposal that includes your topic, a description of your audience, and some idea of the data you’ll be using.
