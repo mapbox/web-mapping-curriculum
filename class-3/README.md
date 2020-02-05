@@ -21,7 +21,7 @@ Class presentation materials are on [Google Drive here](https://drive.google.com
 * Describe an example of how you could use an event listener with an interactive map.
 
 
-### Code exercises to do on your own (10 points):
+### Code exercises to do on your own (10 points each):
 
 * Starting from your marker-and-popup map, add a button that, when clicked, causes the map to fly to Walla Walla, Washington. To turn this assignment in, commit a new file called "fly-to.html" to the "class 3" folder in your personal class repo.
   * [Hint](https://www.w3schools.com/jsref/event_onclick.asp)
