@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  #jurisdictionsContainer {
+    position: absolute; top: 3em; left: 3em; width: 300px;
+    background-color: #fff;
+    padding: 2em;
+  }
+  .jurisdiction-descriptor {
+    font-weight: bold;
+  }
+  .helper-text {
+    color: #999;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="jurisdictionsContainer">
+  <h2>Selected jurisdictions:</h2>
+  <div id="jurisdictionsList">
+    <p class="helper-text">Click on the map to see which jurisdictions overlap with the place you clicked.</p>
+  </div>
+</div>
+<script>
+	var layersList = {
+    'us-congress': {
+      label: "US Congressional district",
+      idProperty: "CD116FP"
+    },
+    'ca-senate': {
+      label: "California State Senate district",
+      idProperty: "DISTRICT"
+    },
+    'ca-assembly': {
+      label: "California State Assembly district",
+      idProperty: "DISTRICT"
+    },
+    'sf-supervisor': {
+      label: "San Francisco Supervisorial district",
+      idProperty: "supdistpad"
+    }
+  };
+  
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2l1dTUzcmgxMDJ0djJ0b2VhY2sxNXBiMyJ9.25Qs4HNEkHubd4_Awbd8Og';
+  var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/danswick/ck6b9ss2c0p101imqjfpeug6r', // stylesheet location
+      center: [-122.42, 37.76], // starting position [lng, lat]
+      zoom: 11 // starting zoom
+  });
+
+  /* Data sources: 
+   *   US congressional boundaries: https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+   *   SF Supervisorial districts: https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny
+   *   CA state assembly districts: https://wedrawthelines.ca.gov/maps-final-draft-assembly-districts/
+   *   CA senate district boundaires: https://www.senate.ca.gov/downloadmaps  */
+
+map.on('click', function(e) {
+  var clickedFeatures = map.queryRenderedFeatures(e.point);
+  var listContainer = document.getElementById('jurisdictionsList');
+  var listItems = '';
+
+
+  var matchedFeatures = clickedFeatures.filter(function(feature) {
+    return layersList.hasOwnProperty(feature.layer.id);
+  });
+
+  matchedFeatures.forEach(function(feature) {
+    var layerLabel = layersList[feature.layer.id].label;
+    var layerId = layersList[feature.layer.id].idProperty;
+    listItems += "<p class='jurisdiction-item'><span class='jurisdiction-descriptor'>" + layerLabel + "</span>: " + feature.properties[layerId] + "</p>";
+  });
+
+  listContainer.innerHTML = listItems;
+});
+
+</script>
+
+</body>
+</html>

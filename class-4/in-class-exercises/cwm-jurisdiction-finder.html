@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  /* Style the container where the jurisdictions will be listed */
+  #jurisdictionsContainer {
+    position: absolute; top: 3em; left: 3em; width: 300px;
+    background-color: #fff;
+    padding: 2em;
+  }
+  /* Style the jurisdictions descriptors to make them stand out */
+  .jurisdiction-descriptor {
+    font-weight: bold;
+  }
+  /* Make helper text lighter in color */
+  .helper-text {
+    color: #999;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<!-- Make a container to house the results of the user's query.
+Should include: 
+  - a container with id jurisdictionsContainer
+  - a header element to describe what the user is looking at
+  - a container with id jurisdictionsList where the list of jurisdictions will go
+  - some helper text to give the user instructions about what to do (this will be replaced with the jurisdictions list) -->
+
+<script>
+  // This list is based on the layers already included in the
+  // Mapbox GL style below. We'll use these values both to
+  // filter out unwanted layers and to make sure we're 
+  // accessing the correct property.
+  /* Data sources: 
+   *   US congressional boundaries: https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+   *   SF Supervisorial districts: https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny
+   *   CA state assembly districts: https://wedrawthelines.ca.gov/maps-final-draft-assembly-districts/
+   *   CA senate district boundaires: https://www.senate.ca.gov/downloadmaps  */
+	var layersList = {
+    'us-congress': {
+      label: "US Congressional district",
+      idProperty: "CD116FP"
+    },
+    'ca-senate': {
+      label: "California State Senate district",
+      idProperty: "DISTRICT"
+    },
+    'ca-assembly': {
+      label: "California State Assembly district",
+      idProperty: "DISTRICT"
+    },
+    'sf-supervisor': {
+      label: "San Francisco Supervisorial district",
+      idProperty: "supdistpad"
+    }
+  };
+  
+  mapboxgl.accessToken = '<your access token>';
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/danswick/ck6b9ss2c0p101imqjfpeug6r', // Custom style that includes boundaries data
+      center: [-122.42, 37.76],
+      zoom: 11
+  });
+
+// Use an event listener to respond when the user clicks on the map
+  // Use queryRenderedFeatures to find all of the features at the clicked point: https://docs.mapbox.com/mapbox-gl-js/api/#map#queryrenderedfeatures
+  // Store the list of clicked features in a variable called clickedFeatures
+
+  // Get the #jurisdictionsList element and store it as a variable called listContainer
+
+  // Create an empty string called listItems. Later on, we'll add some stringified HTML to this string.
+
+  // Filter the clickedFeatures and store the resulting array as a variable called matchedFeatures
+    // We only want layers that match the list from above. We don't want things like roads or buildings
+    // that come with the style. Use `return layersList.hasOwnProperty(feature.layer.id);` to test if 
+    // the feature belongs to a layer in our list.
+
+  // Loop through the matchedFeatures using forEach
+    // Create variables to store the layerLabel and layerId
+    // Generate some HTML to house your jurisdiction list items, then append it to the listItems string. Here's a template:
+      // "<p class='jurisdiction-item'><span class='jurisdiction-descriptor'>" + layerLabel + "</span>: " + feature.properties[layerId] + "</p>";
+
+  // Finally, set the listContainer's innerHTML to the newly finished listItems variable
+
+</script>
+
+</body>
+</html>

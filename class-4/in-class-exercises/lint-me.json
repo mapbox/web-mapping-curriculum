@@ -1,0 +1,44 @@
+{
+  "type" = "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature"
+      "properties": {
+        "island name": "Isla Fernandina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.54632568359375,
+          -0.3652929354040575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "island name": "Isla Isabela"
+      },
+      "geometry": [
+        "type": "Point",
+        "coordinates": [
+          -91.12060546875,
+          -0.42571629769278674
+        ]
+      ]
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        island name: "Isla Santiago"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.71411132812499,
+          -0.24169850190163725
+        ]
+      }
+    }
+  ]
+}
