@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Display a map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Style the container where the jurisdictions will be listed */
+    #jurisdictionsContainer {
+      position: absolute;
+      top: 3em;
+      left: 3em;
+      width: 300px;
+      background-color: #fff;
+      padding: 2em;
+    }
+
+    /* Style the jurisdictions descriptors to make them stand out */
+    .jurisdiction-descriptor {
+      font-weight: bold;
+    }
+
+    /* Make helper text lighter in color */
+    .helper-text {
+      color: #999;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <!-- 
+    Make a container to house the results of the user's query. It should include: 
+    - a container with id jurisdictionsContainer
+    - a header element to describe what the user is looking at
+    - a container with id jurisdictionsList where the list of jurisdictions will go
+    - a span with class "helper-text" to house some helper text to give the user instructions about what to do (this will be replaced with the jurisdictions list) 
+  -->
+  <div id="jurisdictionsContainer">
+    <h2>Selected jurisdictions:</h2>
+    <div id="jurisdictionsList">
+      <p class="helper-text">Click on the map to select jurisdictions.</p>
+    </div>
+  </div>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2swb2g4Z3hqMGFzYTNjbXdxc3F6dWZlaSJ9.Jo1SOIQUg0JV6HK4wEv36w';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/danswick/ck6b9ss2c0p101imqjfpeug6r', // Custom style that includes boundaries data
+      center: [-122.42, 37.76],
+      zoom: 11
+    });
+    
+    map.on('click', function (e) {
+      var clickedFeatures = map.queryRenderedFeatures(e.point, {
+        // Filter the features returned by queryRenderedFeatures so that
+        // only features from a subset of layers show up. The list of layers
+        // below already exist in the custom style used in this map.
+        layers: ['us-congress', 'ca-senate', 'ca-assembly', 'sf-supervisor']
+      });
+
+      // Create an empty string to serve as a place to store all of the list item
+      // elements before adding them to the list container. 
+      var fullListHtml = '';
+
+      // Loop through all of the relevant features, generate custom HTML for each
+      // This HTML will include a description of the jurisdiction as well as an actual jurisdiction number. 
+      clickedFeatures.forEach(function (feature) {
+        var htmlForThisFeature = featureToHtml(feature);
+        
+        // Append generated HTML to full list of items
+        fullListHtml += htmlForThisFeature;
+      });
+
+      // When the loop is complete, get the list container element and 
+      // add all of the newly generated list items to it.
+      var listContainer = document.getElementById('jurisdictionsList');
+      listContainer.innerHTML = fullListHtml;
+    });
+
+
+    /* 
+     **** NAMED FUNCTIONS BELOW ****
+     */
+
+    // A function that takes a feature and turns it into the html structure needed for 
+    // the jurisdictions list on the page.
+    function featureToHtml(feature) {
+      return "<p class='jurisdiction-item'><span class='jurisdiction-descriptor'>"
+        + makeFeatureLabel(feature)
+        + "</span>: "
+        + getDistrictNumber(feature)
+        + "</p>";
+    }
+
+    // A function to generate a more readable label for each of the layers
+    // in our pre-made map style. This will make it easier for our users to
+    // read the results in the jurisdictions list.
+    function makeFeatureLabel(feature) {
+      if (feature.layer.id === 'us-congress') return "US Congressional district";
+      if (feature.layer.id === 'ca-senate') return "California State Senate district";
+      if (feature.layer.id === 'ca-assembly') return "California State Assembly district";
+      if (feature.layer.id === 'sf-supervisor') return "San Francisco Supervisorial district";
+    }
+
+    // A function to help translate the sometimes-confusing property, unique to
+    // each of our jurisdiction layers, into the district ID number the user is 
+    // interested in seeing.
+    function getDistrictNumber(feature) {
+      if (feature.layer.id === 'us-congress') return feature.properties.CD116FP;
+      if (feature.layer.id === 'ca-senate') return feature.properties.DISTRICT;
+      if (feature.layer.id === 'ca-assembly') return feature.properties.DISTRICT;
+      if (feature.layer.id === 'sf-supervisor') return feature.properties.supdistpad;
+    }
+    /* Data sources:
+     *   US congressional boundaries: https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+     *   SF Supervisorial districts: https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny
+     *   CA state assembly districts: https://wedrawthelines.ca.gov/maps-final-draft-assembly-districts/
+     *   CA senate district boundaires: https://www.senate.ca.gov/downloadmaps  */
+
+  </script>
+
+</body>
+
+</html>
