@@ -4,7 +4,7 @@ Class presentation materials are on [Google Drive here](https://docs.google.com/
 
 ### Homework
 
-For your class journal (2 points each):
+#### For your class journal (2 points each):
 
 **Objects recap**
 1. An object is a series of ____’s : ____’s 
@@ -20,10 +20,20 @@ _For the following 3 prompts, reference the working file and README.md in [the j
 2. What does the `getDistrictNumber()` function do?
 3. Looking at the [callback](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced) to `map.on('click',...)`, what is `e` and why do we need it?
 
-Code exercises:
+---
+
+#### Code exercises [10 points each]:
 _For each of the following 2 prompts, commit an html file to the "class 4" folder in your class repo._
 1. Using geojson.io, trace the outline of your childhood home. Using the skills we’ve learned in class, add your new GeoJSON to a Mapbox GL JS map.
 2. Building off of the previous exercise, add functionality that changes the color of the layer you just added when the user clicks on it.
+
+---
+
+#### Code practice [5 points each]:
+_This week, we have something new for you. We're using an interactive code editing tool called repl.io. Each of the links below will take you to a page with some code practice. Each one includes some guiding explanation as well as a set of exercises (each denoted with a number in square brackets, like [1]) for you to try. After you type some code into the pane on the left, you can click the "run" button to execute your code. Once you're satisfied with your code, **you can turn in the exercise by opening an issue in your forked version of the class repo** with the title "Class 4 code practice." Your issue can include either: copied and pasted code or a "share" link_.
+
+1. [Functions](https://repl.it/@danswick/Functions).
+2. [Loops](https://repl.it/@danswick/loops).
 
 
 
