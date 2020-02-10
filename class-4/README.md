@@ -1,6 +1,6 @@
 ## Content for class 4. 
 
-Class presentation materials are on [Google Drive here](https://drive.google.com/open?id=1RdzDj8FHRWDyc6BUcH2tTukqnEi6U0wO) 🚧
+Class presentation materials are on [Google Drive here](https://docs.google.com/presentation/d/1xFKq4-M3xhVJ5hx-qSfe4pHjDcgIYKI6unKXp09UVWc/edit?usp=sharing).
 
 ### Homework
 
