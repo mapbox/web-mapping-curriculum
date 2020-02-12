@@ -40,7 +40,7 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 | 1     	| Introduction                                 	| [link](https://drive.google.com/drive/u/0/folders/1954gWK2MWcNelov4CXq5y4jL0cG7EXFv) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-1) 	|                                              	|
 | 2     	| History of web-mapping and working with data 	| [link](https://drive.google.com/drive/u/0/folders/1UO6saaAQpenTlfWVLtUQ9sGzHozUxwPb) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-2) 	| Select project group, submit possible topics 	|
 | 3     	| Adding interactivity to your map             	| [link](https://drive.google.com/open?id=1J0TGZN3XRQw89S1f2ugrPw9jdVIisQeT) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-3) 	| Project data and proposal                    	|
-| 4     	| Client-side rendering/GL maps                        	| Add link 	| Add link 	|                                              	|
+| 4     	| Client-side rendering/GL maps                        	| [link](https://drive.google.com/open?id=1RdzDj8FHRWDyc6BUcH2tTukqnEi6U0wO) 	| Add link 	|                                              	|
 | 5     	| Cartography for the web                      	| Add link 	| Add link 	|                                              	|
 | 6     	| Web map development and documentation literacy                      	| Add link 	| Add link 	|  Data report                                            	|
 | 7     	| Live map updates                             	| Add link 	| Add link 	|                                              	|
