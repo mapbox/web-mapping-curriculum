@@ -46,4 +46,5 @@ _Your medium-fidelity sketches should include_:
 * For elements that aren't immediately visible, like hidden map layers, interactions, or other items that are difficult to convey via sketch, include descriptions or diagrams. These could include arrows, numbered annotations, inset images, or whatever helps convey your ideas.
 
 ![good example of a medium-fidelity sketch](https://alistapart.com/wp-content/uploads/2012/07/4-commlogix.png?w=960)
+
 _Good example of a medium-fidelity sketch. Source: [A List Apart](https://alistapart.com/article/sketching-the-visual-thinking-power-tool/)._
