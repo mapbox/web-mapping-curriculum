@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2swb2g4Z3hqMGFzYTNjbXdxc3F6dWZlaSJ9.Jo1SOIQUg0JV6HK4wEv36w';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+        center: [-122.44, 37.769], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    map.on('load', function() {
+      // Create a layer to house the search radius data.
+      // This layer will be empty at first, but you'll connect
+      // it to some data later!
+      map.addLayer({
+        id: 'search-radius',
+        source: {
+          type: 'geojson',
+          data: { "type": "FeatureCollection", "features": [] }
+        },
+        type: 'fill',
+        paint: {
+          'fill-color': '#555',
+          'fill-opacity': 0.3
+        }
+      }, 'country-label');
+    });
+
+    // Create a new marker. Later, when the user clicks on the map, set the marker's location
+    // right where the user clicked.
+    var marker = new mapboxgl.Marker();
+
+    // Listen for click events. 
+    map.on('click', function(e) {
+      // Store the lngLat associated with the click event as a variable called clickedLngLat
+      var clickedLngLat = e.lngLat;
+
+      // When a click happens, set the marker's lng, lat to the location of the click
+      marker.setLngLat(clickedLngLat).addTo(map);
+
+      // Use the makeRadius() utility function to generate the search radius as a GeoJSON polygon
+      var searchRadius = makeRadius([clickedLngLat.lng, clickedLngLat.lat], 750);
+      // Get the search-radius later, and set its data to the radius created in the previous step
+      map.getSource('search-radius').setData(searchRadius);
+
+    });
+
+    /****** UTILITY FUNCTIONS *******/
+    function makeRadius(lngLatArray, radiusInMeters) {
+      // Turn the click location into a point feature before we can do calculations on it
+      // turf.point() is the method to use
+      var point = turf.point(lngLatArray);
+      // Use turf's buffer function to make a polygon that around the clicked point
+      // turf.buffer(point, radius, {units: ''})
+      var buffered = turf.buffer(point, radiusInMeters, { units: 'miles' });
+
+      // Return the buffered feature
+      return buffered;
+    }
+</script>
+
+</body>
+</html>

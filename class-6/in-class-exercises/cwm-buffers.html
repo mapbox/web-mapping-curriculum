@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css" rel="stylesheet" />
+<!-- Add link to turf library -->
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = '<your access token here>';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+        center: [-122.44, 37.769], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    map.on('load', function() {
+      // Use addLayer to create a layer to house the search radius data.
+      // This layer will be empty at first, but you'll connect
+      // it to some data later!
+      
+    });
+
+    // Create a new marker. Later, when the user clicks on the map, set the marker's location
+    // right where the user clicked.
+    
+
+    // Listen for click events. 
+    
+      // Store the lngLat associated with the click event as a variable called clickedLngLat
+      
+
+      // When a click happens, set the marker's lngLat to the location of the click
+      // then add it to the map
+
+      // Use the makeRadius() utility function to generate the search radius as a GeoJSON polygon
+
+      // Get the search-radius source, and set its data to the radius created in the previous step
+      
+
+    /****** UTILITY FUNCTIONS *******/
+    // Create a utility function called makeRadius with two parameters: lngLatArray and radiusInMeters
+      // Turn the click location into a point feature before we can do calculations on it
+      // turf.point() is the method to use
+      
+      // Use turf's buffer function to make a polygon that around the clicked point
+      // turf.buffer(point, radius, {units: ''})
+
+      // Return the buffered feature
+
+</script>
+
+</body>
+</html>
