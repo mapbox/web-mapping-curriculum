@@ -7,8 +7,8 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
-<!-- 🔰 Using a script tag, link to centroids data file, which lives in the same directory as this file and contains a variable called "centroids" you can reference in your map code -->
-
+<!-- 🔰 Link to parcels data file, which lives in the same directory as this file and contains a variable called "parcels" you can reference in your map code -->
+<script src="./centroids.js"></script>
 <style>
 	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -19,19 +19,19 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    /* 🔰 set the background-color to white */
+    background-color: #ffffff; /* 🔰 set the background-color to white */
     padding: 10px 25px 25px 25px;
     border-radius: 5px;
     max-height: 600px;
-    /* 🔰 to avoid making a really long list that runs off the page, set overflow to scroll */
+    overflow: scroll; /* 🔰 to avoid making a really long list that runs off the page, set overflow to scroll */
   }
 </style>
 </head>
 <body>
 <div id="map"></div>
 <div id="selectedLocations">
-  <!-- 🔰 Create a heading that says "Selected locations:" -->
-
+  <!-- 🔰 Create a heading that says "selected locations" -->
+  <h1>Selected locations: </h1>
   <div id="bulletsContainer"></div>
 </div>
 <script>
@@ -49,6 +49,18 @@
         // Give your layer an ID of 'search-radius'
         // The source should be of type 'geosjon' and its data should be set to a feature collection without any features. Later on, you will update this layer with the search radius you create when the user clicks on the map.
         // It should be a fill layer. Set whichever paint properties you like.
+      map.addLayer({
+        id: 'search-radius',
+        source: {
+          type: 'geojson',
+          data: { "type": "FeatureCollection", "features": [] }
+        },
+        type: 'fill',
+        paint: {
+          'fill-color': '#555',
+          'fill-opacity': 0.3
+        }
+      }, 'country-label');
 
       // 🔰 Use map.addLayer to add your parcel centroids GeoJSON as another layer
         // Give this layer an ID of 'centroids'
@@ -58,6 +70,19 @@
         /**************************
          * [📝 PROMPT 1] Describe where the centroids variable comes from. How is it possible for you to reference this variable when you didn't declare it?
         ***************************/
+      map.addLayer({
+        id: 'centroids',
+        source: {
+          type: 'geojson',
+          data: centroids
+        },
+        type: 'circle',
+        paint: {
+          'circle-color': '#000',
+          'circle-opacity': 0.1,
+          'circle-radius': 4
+        }
+      }, 'country-label');
 
       // 🔰 Use map.addLayer to add another empty layer to house the parcel centroids that the user will select. 
       // Creating another layer allows you to style the selected centroids in a way that is distinct form the unselected ones.
@@ -72,6 +97,19 @@
         /**************************
          * [📝 PROMPT 2] Why might you want to create the 'centroids-selected' layer after you've created the 'centroids' layer?
         ***************************/
+      map.addLayer({
+        id: 'centroids-selected',
+        source: {
+          type: 'geojson',
+          data: { "type": "FeatureCollection", "features": [] }
+        },
+        type: 'circle',
+        paint: {
+          'circle-color': 'salmon',
+          'circle-opacity': 0.1,
+          'circle-radius': 5
+        }
+      }, 'country-label');
 
     });
 
@@ -81,38 +119,39 @@
     /**************************
      * [📝 PROMPT 3] Should you set the marker's lngLat and add it to the map? Why or why not?
     ***************************/
-    
+    var marker = new mapboxgl.Marker();
 
     //🔰 Create an event listener that listens for clicks on the map
-    
+    map.on('click', function(e) {
       // 🔰 Store the lngLat associated with the click event as a variable called clickedLngLat
-      
+      var clickedLngLat = e.lngLat;
 
       //🔰 When a click occurs, set the marker's [lng, lat] to the location of the click
       // Add the marker to the map.
-      
+      marker.setLngLat(clickedLngLat).addTo(map);
 
       //🔰 Create a variable called searchRadius and assign its value to:
         // Call the makeRadius() utility function to generate a 200 meter search radius.
-      
+      var searchRadius = makeRadius([clickedLngLat.lng, clickedLngLat.lat], 200);
 
       //🔰 Get the search-radius source. Set its data to the radius created in the previous step.
       // Here is an example you can reference: https://docs.mapbox.com/mapbox-gl-js/api/#geojsonsource
-      
+      map.getSource('search-radius').setData(searchRadius);
 
       //🔰 Create a variable called selectedPoints and assign its value to:
         // Call the pip() utility function with the appropriate arguments.
             /**************************
              * [📝 PROMPT 4] How did you know which arguments to pass to the pip() function?
             ***************************/
-      
+      var selectedPoints = pip(centroids, searchRadius);
 
       //🔰 Get the centroids-selected source. Set its data to the selected points created in the previous step.
-      
+      map.getSource('centroids-selected').setData(selectedPoints);
 
       //🔰 Call the buildLocationsList utility function with the appropriate arguments.
-      
+      buildLocationsList(selectedPoints, 'bulletsContainer');
 
+    });
 
     /****** UTILITY FUNCTIONS *******/
 
@@ -127,15 +166,15 @@
       //🔰 Create a variable called point and assign its value to:
         // use turf.point() to generate a GeoJSON point from lngLatArray.
         // https://turfjs.org/docs/#point
-      
+      var point = turf.point(lngLatArray);
       
       //🔰 Create a variable called buffered. Assign its value to:
         // Use turf's buffer function to make a polygon that around the clicked point
         // https://turfjs.org/docs/#buffer
-      
+      var buffered = turf.buffer(point, radiusInMeters, { units: 'meters' });
 
       //🔰 Return the buffered feature
-      
+      return buffered;
     }
 
     /**
@@ -149,10 +188,10 @@
       //🔰 Create a variable called selectedPoints and set its value to:
         // use turf.pointsWithinPolygon to find the points that fall within a given polygon.
         // https://turfjs.org/docs/#pointsWithinPolygon
-      
+      var selectedPoints = turf.pointsWithinPolygon(pointsFeatureCollection, polygon);
 
       //🔰 Return selectedPoints
-      
+      return selectedPoints;
     }
 
     /**
@@ -163,7 +202,7 @@
     function buildLocationsList(selectedPoints, containerId) {
       //🔰 Use document.getElementById to get the element with the ID passed to this function.
       // Create a variable called container and assign the above to it.
-      
+      var container = document.getElementById(containerId);
       
       var pointBullets = selectedPoints.features.map(function(point) {
         // Some of the parcel data doesn't have full addresses. 
@@ -179,10 +218,10 @@
       // 🔰 Create a variable called bulletsList.
       // Using the logic in the previous loop as a model, wrap the pointBullets list in an unordered list: https://www.w3schools.com/html/html_lists.asp
       // Hint: you can use join('') to turn the pointBullets array into a single string: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
-      
+      var bulletsList = "<ul>" + pointBullets.join('') + "</ul>";
 
       // 🔰 Assign the container's innerHTML to the value of the bulletsList variable you just created. https://www.w3schools.com/jsref/prop_html_innerhtml.asp
-      
+      container.innerHTML = bulletsList;
     }
 </script>
 
