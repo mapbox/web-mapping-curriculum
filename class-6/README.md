@@ -21,7 +21,11 @@ Class presentation materials are on [Google Drive here](https://docs.google.com/
 
 ### Code exercises to do on your own (20 points):
 
-Find this week’s homework in the main class repo: https://github.com/mapbox/web-mapping-curriculum/tree/master/class-6/homework 
+Find this week’s homework in the main class repo: https://github.com/mapbox/web-mapping-curriculum/tree/master/class-6/homework. 
+
+The finished product for this week's homework should look something like this: 
+
+![](homework/homework-screenshot.png)
 
 Follow the prompts to use your buffer map from today’s class to build a more complex web map that searches for locations within a given radius. For this assignment, there are both code prompts (denoted with a 🔰) and writing prompts (denoted with a 📝). Address the 🔰 code prompts right in the file, as usual. All of the 📝 writing prompts have been included in the class journal section above.
 
