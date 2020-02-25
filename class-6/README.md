@@ -27,5 +27,9 @@ The finished product for this week's homework should look something like this:
 
 ![](homework/homework-screenshot.png)
 
-Follow the prompts to use your buffer map from today’s class to build a more complex web map that searches for locations within a given radius. For this assignment, there are both code prompts (denoted with a 🔰) and writing prompts (denoted with a 📝). Address the 🔰 code prompts right in the file, as usual. All of the 📝 writing prompts have been included in the class journal section above.
+Follow the prompts to use your buffer map from today’s class to build a more complex web map that searches for locations within a given radius. For this assignment, there are both code prompts (denoted with a 🔰) and writing prompts (denoted with a 📝). 
 
+**How to turn in the code exercise**:
+
+* Address the 🔰 code prompts right in the file, as usual, then commit your completed file to your forked class repo in the `class-6/homework` folder.
+* Respond to the 📝 writing prompts in the class journal section above, as usual.
