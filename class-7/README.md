@@ -9,6 +9,17 @@ Class presentation materials are on [Google Drive here](https://drive.google.com
 **Web app cartography**
 For the following prompts, please read through the [cartography presentation here](https://docs.google.com/presentation/d/1c9TQPnMGLLEcSk1G32iY6wUCiA0oha4vy7ztM40q7rc/edit?usp=sharing).
 
+
+1. Color plays a significant role in the visualization of map data.  What are some important considerations to keep in mind when choosing the appropriate color scheme for your map?
+
+2. Why might you want to avoid using a rainbow color scheme? 
+
+3. List and describe 2-3 different thematic map types
+
+4. What type of data is appropriately respresented by a sequential color scheme? What about a diverging color scheme? 
+
+5. Can you name any tools (either from the presentation or your web travels) that would be helpful for choosing colors? 
+
 **CORS and working with external data**
 1. In your own words, describe why web map developers have to think about CORS.
 2. What is the concept of "separation of concerns?" 
