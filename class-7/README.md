@@ -34,4 +34,4 @@ This exercise is more open-ended than usual and we encourage you to be as creati
 
 ## Project
 
-Next week, you'll present your projects to the class. The following week, your final projects and project reports are due. Please see the rubrics in the `project` directory for more details.
+Next week, you'll present your projects to the class. The following week, your final projects and project reports are due. Please see the [rubrics](https://github.com/mapbox/web-mapping-curriculum/blob/master/project/project-rubrics.md) in the `project` directory for more details.
