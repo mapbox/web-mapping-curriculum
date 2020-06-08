@@ -41,8 +41,8 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 | 2     	| History of web-mapping and working with data 	| [link](https://drive.google.com/drive/u/0/folders/1UO6saaAQpenTlfWVLtUQ9sGzHozUxwPb) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-2) 	| Select project group, submit possible topics 	|
 | 3     	| Adding interactivity to your map             	| [link](https://drive.google.com/open?id=1J0TGZN3XRQw89S1f2ugrPw9jdVIisQeT) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-3) 	| Project data and proposal                    	|
 | 4     	| Client-side rendering/GL maps                        	| [link](https://drive.google.com/open?id=1RdzDj8FHRWDyc6BUcH2tTukqnEi6U0wO) 	| [link](https://github.com/mapbox/web-mapping-curriculum/blob/master/class-4/README.md) 	|                                              	|
-| 5     	| Cartography for the web                      	| Add link 	| Add link 	|                                              	|
-| 6     	| Web map development and documentation literacy                      	| Add link 	| Add link 	|  Data report                                            	|
-| 7     	| Live map updates                             	| Add link 	| Add link 	|                                              	|
+| 5     	| Project clinic and data report                     	| [link](https://drive.google.com/drive/folders/1NIqZMtxK5zF1DpFgCA14OpjSUkGAznCw) 	| Add link 	|                                              	|
+| 6     	| Incorporating data into your webmap                     	| [link](https://drive.google.com/drive/folders/19iWefnaxbK7C6s1ekmgebQDAvf9v2LTm) 	| Add link 	|  Data report                                            	|
+| 7     	| Big GeoJSONs                           	| [link](https://drive.google.com/drive/folders/1laR13EXvdd2i_Uodm3t_iKCjXHV9mqQk) 	| Add link 	|                                              	|
 | 8     	| Work day                                     	| Add link 	| Add link 	| Project presentations                        	|
 | 9     	|                                              	|          	|          	| Final submissions due                	|
