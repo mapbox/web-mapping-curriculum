@@ -44,5 +44,5 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 | 5     	| Project clinic and data report                     	| [link](https://drive.google.com/drive/folders/1NIqZMtxK5zF1DpFgCA14OpjSUkGAznCw) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-5) 	|                                              	|
 | 6     	| Incorporating data into your webmap                     	| [link](https://drive.google.com/drive/folders/19iWefnaxbK7C6s1ekmgebQDAvf9v2LTm) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-6) 	|  Data report                                            	|
 | 7     	| Big GeoJSONs                           	| [link](https://drive.google.com/drive/folders/1laR13EXvdd2i_Uodm3t_iKCjXHV9mqQk) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-7) 	|                                              	|
-| 8     	| Work day                                     	| Add link 	| Add link 	| Project presentations                        	|
+| 8     	| Work day                                     	|  	|  	| Project presentations                        	|
 | 9     	|                                              	|          	|          	| Final submissions due                	|
