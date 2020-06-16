@@ -46,3 +46,5 @@ Mapbox is the location data platform for mobile and web applications. Mapbox pro
 | 7     	| Big GeoJSONs                           	| [link](https://drive.google.com/drive/folders/1laR13EXvdd2i_Uodm3t_iKCjXHV9mqQk) 	| [link](https://github.com/mapbox/web-mapping-curriculum/tree/master/class-7) 	|                                              	|
 | 8     	| Work day                                     	|  	|  	| Project presentations                        	|
 | 9     	|                                              	|          	|          	| Final submissions due                	|
+
+My name is Si and I am making edits. 
